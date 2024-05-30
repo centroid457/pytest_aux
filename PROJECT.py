@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 1)
+    VERSION: Tuple[int, int, int] = (0, 0, 2)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[parametrisation] add pytest_parametrisation_tester"
+        "[parametrisation] zero comments and annotates"
     ]
 
     # FINALIZE -----------------------------------------------

@@ -12,7 +12,10 @@ pass
 
 # =====================================================================================================================
 def pytest_parametrisation_tester(
-        func_link, args, kwargs, _EXPECTED,
+        func_link: Callable[..., Union[Any, NoReturn]], # if func would get Exx - instance of exx would be returned for value!
+        args,
+        kwargs,
+        _EXPECTED: Union[Any, Exception, Type[Exception]],  # EXACT VARIANT OR ExxClass
         _MARK: pytest.MarkDecorator | None  = None,
         _COMMENT: str | None = None
 ):
