@@ -1,4 +1,4 @@
-# pytest_aux (v0.0.5)
+# pytest_aux (v0.0.6)
 
 ## DESCRIPTION_SHORT
 templates/examples and aux for pytest

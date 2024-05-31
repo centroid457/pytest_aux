@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 5)
+    VERSION: Tuple[int, int, int] = (0, 0, 6)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[parametrisation] add pytest_func_tester__wo_kwargs/*__wo_args"
+        "[parametrisation] fix args by Value_NotPassed"
     ]
 
     # FINALIZE -----------------------------------------------
