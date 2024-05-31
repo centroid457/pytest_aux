@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 4)
+    VERSION: Tuple[int, int, int] = (0, 0, 5)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[parametrisation] args could be passed as direct one value!"
+        "[parametrisation] add pytest_func_tester__wo_kwargs/*__wo_args"
     ]
 
     # FINALIZE -----------------------------------------------

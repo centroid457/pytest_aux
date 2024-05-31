@@ -11,6 +11,10 @@
 ********************************************************************************
 ## NEWS
 
+0.0.5 (2024/05/31 10:37:54)
+------------------------------
+- [parametrisation] add pytest_func_tester__wo_kwargs/*__wo_args  
+
 0.0.4 (2024/05/31 10:24:31)
 ------------------------------
 - [parametrisation] args could be passed as direct one value!  

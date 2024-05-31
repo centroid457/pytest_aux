@@ -20,6 +20,8 @@
 from .main import (
     # BASE
     pytest_func_tester,
+    pytest_func_tester__wo_kwargs,
+    pytest_func_tester__wo_args,
 
     # AUX
 

@@ -13,9 +13,9 @@ pass
 # =====================================================================================================================
 def pytest_func_tester(
         func_link: Callable[..., Union[Any, NoReturn]], # if func would get Exx - instance of exx would be returned for value!
-        args: Union[tuple[Any], Any, None],
-        kwargs: Optional[dict[str, Any]],
-        _EXPECTED: Union[Any, Exception, Type[Exception]],  # EXACT VALUE OR ExxClass
+        args: Union[tuple[Any], Any, None] = None,
+        kwargs: Optional[dict[str, Any]] = None,
+        _EXPECTED: Union[Any, Exception, Type[Exception]] = True,  # EXACT VALUE OR ExxClass
 
         _MARK: pytest.MarkDecorator | None = None,
         _COMMENT: str | None = None
@@ -54,6 +54,44 @@ def pytest_func_tester(
             assert actual_value == _EXPECTED
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+def pytest_func_tester__wo_kwargs(
+        func_link,
+        args,
+        _EXPECTED,
+
+        _MARK = None,
+        _COMMENT = None
+) -> NoReturn | None:
+    """
+    short variant in case of kwargs is not needed
+
+    WHY IT NEED
+    -----------
+     ll params passed by pytest while parametrisation as TUPLE!!!! so you cant miss any param in the middle!
+    """
+    pytest_func_tester(func_link=func_link, args=args, _EXPECTED=_EXPECTED, _MARK=_MARK, _COMMENT=_COMMENT)
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+def pytest_func_tester__wo_args(
+        func_link,
+        kwargs,
+        _EXPECTED,
+
+        _MARK = None,
+        _COMMENT = None
+) -> NoReturn | None:
+    """
+    short variant in case of args is not needed
+
+    WHY IT NEED
+    -----------
+     ll params passed by pytest while parametrisation as TUPLE!!!! so you cant miss any param in the middle!
+    """
+    pytest_func_tester(func_link=func_link, kwargs=kwargs, _EXPECTED=_EXPECTED, _MARK=_MARK, _COMMENT=_COMMENT)
+
+
 # =====================================================================================================================
 pass    # USAGE EXAMPLES
 pass    # USAGE EXAMPLES
@@ -90,7 +128,7 @@ def _func_example(arg1: Any, arg2: Any) -> str:
         ((1, 2), {}, "12", mark.xfail, "SHOULD BE FAIL!"),
     ]
 )
-def test__full_params(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):  # NOTE: all params passed by TUPLE!!!! so you cant miss any in the middle!
+def test__full_params(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):     # NOTE: all params passed by TUPLE!!!! so you cant miss any in the middle!
     pytest_func_tester(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT)
 
 
@@ -106,6 +144,20 @@ def test__full_params(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):  # N
 )
 def test__short_variant(func_link, args, kwargs, _EXPECTED):
     pytest_func_tester(func_link, args, kwargs, _EXPECTED)
+
+
+# =====================================================================================================================
+@pytest.mark.parametrize(argnames="func_link", argvalues=[int, ])
+@pytest.mark.parametrize(
+    argnames="args, _EXPECTED",
+    argvalues=[
+        (("1", ), 1),
+        ("1", 1),
+        (("hello", ), Exception),
+    ]
+)
+def test__shortest_variant(func_link, args, _EXPECTED):
+    pytest_func_tester__wo_kwargs(func_link, args, _EXPECTED)
 
 
 # =====================================================================================================================
