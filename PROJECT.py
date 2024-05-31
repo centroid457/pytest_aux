@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 2)
+    VERSION: Tuple[int, int, int] = (0, 0, 3)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[parametrisation] zero comments and annotates"
+        "[parametrisation] add examples into main + renames"
     ]
 
     # FINALIZE -----------------------------------------------
