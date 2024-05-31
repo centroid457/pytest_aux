@@ -3,6 +3,7 @@ from typing import *
 import pytest
 
 from object_info import *
+from funcs_aux import *
 from pytest import mark
 
 
@@ -13,7 +14,7 @@ pass
 # =====================================================================================================================
 def pytest_func_tester(
         func_link: Callable[..., Union[Any, NoReturn]], # if func would get Exx - instance of exx would be returned for value!
-        args: Union[tuple[Any], Any, None] = None,
+        args: Union[tuple[Any], Any] = Value_NotPassed,
         kwargs: Optional[dict[str, Any]] = None,
         _EXPECTED: Union[Any, Exception, Type[Exception]] = True,  # EXACT VALUE OR ExxClass
 
@@ -24,7 +25,8 @@ def pytest_func_tester(
     function which test target func with exact parameters
     :return: Exception only on AssertionError, no exception withing target func!
     """
-    args = args or ()
+    if args == Value_NotPassed:
+        args = ()
     if not isinstance(args, tuple):
         args = (args, )
     kwargs = kwargs or dict()
@@ -153,6 +155,7 @@ def test__short_variant(func_link, args, kwargs, _EXPECTED):
     argvalues=[
         (("1", ), 1),
         ("1", 1),
+        ("", ValueError),
         (("hello", ), Exception),
     ]
 )
