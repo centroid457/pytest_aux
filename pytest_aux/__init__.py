@@ -19,7 +19,7 @@
 # ---------------------------------------------------------------------------------------------------------------------
 from .main import (
     # BASE
-    pytest_parametrisation_tester,
+    pytest_func_tester,
 
     # AUX
 

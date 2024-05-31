@@ -81,7 +81,7 @@ def test__example_simple__without_templating(p1, p2, _EXPECTED, _MARK):
 )
 @pytest.mark.parametrize(argnames="func_link", argvalues=[func_example, ])
 def test__with_comments(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):
-    pytest_parametrisation_tester(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT)
+    pytest_func_tester(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT)
 
 
 # =====================================================================================================================
@@ -94,7 +94,7 @@ def test__with_comments(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):
     ]
 )
 def test__short_variant(func_link, args, kwargs, _EXPECTED):
-    pytest_parametrisation_tester(func_link, args, kwargs, _EXPECTED)
+    pytest_func_tester(func_link, args, kwargs, _EXPECTED)
 
 
 # =====================================================================================================================
