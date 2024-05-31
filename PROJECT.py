@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 3)
+    VERSION: Tuple[int, int, int] = (0, 0, 4)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[parametrisation] add examples into main + renames"
+        "[parametrisation] args could be passed as direct one value!"
     ]
 
     # FINALIZE -----------------------------------------------

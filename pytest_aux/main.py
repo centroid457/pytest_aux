@@ -13,8 +13,8 @@ pass
 # =====================================================================================================================
 def pytest_func_tester(
         func_link: Callable[..., Union[Any, NoReturn]], # if func would get Exx - instance of exx would be returned for value!
-        args,
-        kwargs,
+        args: Union[tuple[Any], Any, None],
+        kwargs: Optional[dict[str, Any]],
         _EXPECTED: Union[Any, Exception, Type[Exception]],  # EXACT VALUE OR ExxClass
 
         _MARK: pytest.MarkDecorator | None = None,
@@ -25,7 +25,9 @@ def pytest_func_tester(
     :return: Exception only on AssertionError, no exception withing target func!
     """
     args = args or ()
-    kwargs = kwargs or {}
+    if not isinstance(args, tuple):
+        args = (args, )
+    kwargs = kwargs or dict()
     comment = _COMMENT or ""
 
     try:
@@ -88,7 +90,7 @@ def _func_example(arg1: Any, arg2: Any) -> str:
         ((1, 2), {}, "12", mark.xfail, "SHOULD BE FAIL!"),
     ]
 )
-def test__full_params(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):
+def test__full_params(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):  # NOTE: all params passed by TUPLE!!!! so you cant miss any in the middle!
     pytest_func_tester(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT)
 
 
@@ -98,7 +100,8 @@ def test__full_params(func_link, args, kwargs, _EXPECTED, _MARK, _COMMENT):
     argnames="args, kwargs, _EXPECTED",
     argvalues=[
         (("1", ), {}, 1),
-        (("hello", ), {}, Exception),
+        ("1", {}, 1),                   # ARGS - direct one value acceptable
+        (("hello", ), {}, Exception),   # EXPECT - direct exceptions
     ]
 )
 def test__short_variant(func_link, args, kwargs, _EXPECTED):
