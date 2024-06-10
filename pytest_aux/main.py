@@ -37,7 +37,7 @@ def pytest_func_tester(
     except Exception as exx:
         actual_value = exx
 
-    print(f"pytest_func_tester={actual_value=}/{_EXPECTED=}")
+    print(f"pytest_func_tester={args=}/{kwargs=}//{actual_value=}/{_EXPECTED=}")
 
     # MARKS -------------------------
     # print(f"{mark.skipif(True)=}")
