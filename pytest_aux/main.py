@@ -59,7 +59,7 @@ def pytest_func_tester(
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-def pytest_func_tester__wo_kwargs(
+def pytest_func_tester__no_kwargs(
         func_link,
         args,
         _EXPECTED,
@@ -78,7 +78,7 @@ def pytest_func_tester__wo_kwargs(
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-def pytest_func_tester__wo_args(
+def pytest_func_tester__no_args(
         func_link,
         kwargs,
         _EXPECTED,
@@ -162,7 +162,7 @@ def test__short_variant(func_link, args, kwargs, _EXPECTED):
     ]
 )
 def test__shortest_variant(func_link, args, _EXPECTED):
-    pytest_func_tester__wo_kwargs(func_link, args, _EXPECTED)
+    pytest_func_tester__no_kwargs(func_link, args, _EXPECTED)
 
 
 # =====================================================================================================================
