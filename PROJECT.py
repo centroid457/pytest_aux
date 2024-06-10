@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 7)
+    VERSION: Tuple[int, int, int] = (0, 0, 8)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[pytest_func_tester] add printing values active/expected"
+        "[pytest_func_tester] rename to pytest_func_tester__no_kwargs/*"
     ]
 
     # FINALIZE -----------------------------------------------

@@ -11,6 +11,10 @@
 ********************************************************************************
 ## NEWS
 
+0.0.8 (2024/06/10 12:44:06)
+------------------------------
+- [pytest_func_tester] rename to pytest_func_tester__no_kwargs/*  
+
 0.0.7 (2024/06/10 12:36:46)
 ------------------------------
 - [pytest_func_tester] add printing values active/expected  
