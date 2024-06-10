@@ -37,8 +37,10 @@ def pytest_func_tester(
     except Exception as exx:
         actual_value = exx
 
+    print(f"pytest_func_tester={actual_value=}/{_EXPECTED=}")
+
     # MARKS -------------------------
-    print(f"{mark.skipif(True)=}")
+    # print(f"{mark.skipif(True)=}")
     if _MARK == mark.skip:
         pytest.skip("skip")
     elif isinstance(_MARK, pytest.MarkDecorator) and _MARK.name == "skipif" and all(_MARK.args):
