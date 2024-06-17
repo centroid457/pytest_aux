@@ -25,7 +25,7 @@ def pytest_func_tester(
     function which test target func with exact parameters
     :return: Exception only on AssertionError, no exception withing target func!
     """
-    if args == Value_NotPassed:
+    if TypeChecker.check__nested__by_cls_or_inst(args, Value_NotPassed):    # DONT CHANGE just to "args == Value_NotPassed"!!! see tests!!!
         args = ()
     if not isinstance(args, tuple):
         args = (args, )

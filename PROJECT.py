@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 9)
+    VERSION: Tuple[int, int, int] = (0, 0, 10)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[pytest_func_tester] zero add print args/kwargs"
+        "[pytest_func_tester] fix work on instances with __CMP__! +tests"
     ]
 
     # FINALIZE -----------------------------------------------
