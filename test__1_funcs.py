@@ -6,6 +6,7 @@ import shutil
 from tempfile import TemporaryDirectory
 
 from pytest import mark
+from funcs_aux import *
 
 
 # =====================================================================================================================
@@ -17,11 +18,11 @@ from pytest_aux import *
 # TODO: add tests for funcs!!!
 
 
-class Cls:
+class Cls(Cmp):
     def __init__(self, value):
         self.VALUE = value
 
-    def __cmp(self, other):
+    def __cmp__(self, other):
         other = Cls(other)
         if self.VALUE == other.VALUE:
             return 0
@@ -29,24 +30,6 @@ class Cls:
             return 1
         if self.VALUE < other.VALUE:
             return -1
-
-    def __eq__(self, other):
-        return self.__cmp(other) == 0
-
-    def __ne__(self, other):
-        return self.__cmp(other) != 0
-
-    def __lt__(self, other):
-        return self.__cmp(other) < 0
-
-    def __gt__(self, other):
-        return self.__cmp(other) > 0
-
-    def __le__(self, other):
-        return self.__cmp(other) <= 0
-
-    def __ge__(self, other):
-        return self.__cmp(other) >= 0
 
 
 def test____LE__():

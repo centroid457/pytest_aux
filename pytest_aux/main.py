@@ -187,3 +187,22 @@ def test__shortest_variant(func_link, args, _EXPECTED):
 
 
 # =====================================================================================================================
+@pytest.mark.parametrize(
+    argnames="expression",
+    argvalues=[
+        ("1rc2") == "1rc2",
+        ("1rc2") != "1rc1",
+
+        ("1.1rc2") > "1.0rc1",
+        ("1.1rc2") > "1.1rc0",
+        ("1.1rc2.0") > "1.1rc2",
+
+        ("01.01rc02") > "1.1rc1",
+        ("01.01rc02") < "1.1rd1",
+    ]
+)
+def test__expressions( expression):
+    pytest_func_tester__no_args_kwargs(expression)
+
+
+# =====================================================================================================================
