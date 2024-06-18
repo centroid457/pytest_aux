@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[pytest_func_tester] fix work on instances with __CMP__! +tests"
+        "[pytest_func_tester] add pytest_func_tester__no_args_kwargs"
     ]
 
     # FINALIZE -----------------------------------------------

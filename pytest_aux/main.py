@@ -13,7 +13,7 @@ pass
 
 # =====================================================================================================================
 def pytest_func_tester(
-        func_link: Callable[..., Union[Any, NoReturn]], # if func would get Exx - instance of exx would be returned for value!
+        func_link: Union[Callable[..., Union[Any, NoReturn]], Any], # if func would get Exx - instance of exx would be returned for value!
         args: Union[tuple[Any], Any] = Value_NotPassed,
         kwargs: Optional[dict[str, Any]] = None,
         _EXPECTED: Union[Any, Exception, Type[Exception]] = True,  # EXACT VALUE OR ExxClass
@@ -32,10 +32,13 @@ def pytest_func_tester(
     kwargs = kwargs or dict()
     comment = _COMMENT or ""
 
-    try:
-        actual_value = func_link(*args, **kwargs)
-    except Exception as exx:
-        actual_value = exx
+    if TypeChecker.check__func_or_meth(func_link):
+        try:
+            actual_value = func_link(*args, **kwargs)
+        except Exception as exx:
+            actual_value = exx
+    else:
+        actual_value = func_link
 
     print(f"pytest_func_tester={args=}/{kwargs=}//{actual_value=}/{_EXPECTED=}")
 
@@ -59,10 +62,26 @@ def pytest_func_tester(
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+def pytest_func_tester__no_args_kwargs(
+        func_link,
+        _EXPECTED = True,
+
+        _MARK = None,
+        _COMMENT = None
+) -> NoReturn | None:
+    """
+    created specially for using inline operators like 'func_link=A>=B'
+    BUT be careful cause of exceptions!
+    recommended using pytest_func_tester__no_args instead with 'func_link=lambda: A>=B'
+    """
+    pytest_func_tester(func_link=func_link, _EXPECTED=_EXPECTED, _MARK=_MARK, _COMMENT=_COMMENT)
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 def pytest_func_tester__no_kwargs(
         func_link,
         args,
-        _EXPECTED,
+        _EXPECTED = True,
 
         _MARK = None,
         _COMMENT = None
@@ -72,7 +91,7 @@ def pytest_func_tester__no_kwargs(
 
     WHY IT NEED
     -----------
-     ll params passed by pytest while parametrisation as TUPLE!!!! so you cant miss any param in the middle!
+    params passed by pytest while parametrisation as TUPLE!!!! so you cant miss any param in the middle!
     """
     pytest_func_tester(func_link=func_link, args=args, _EXPECTED=_EXPECTED, _MARK=_MARK, _COMMENT=_COMMENT)
 
@@ -81,31 +100,33 @@ def pytest_func_tester__no_kwargs(
 def pytest_func_tester__no_args(
         func_link,
         kwargs,
-        _EXPECTED,
+        _EXPECTED = True,
 
         _MARK = None,
         _COMMENT = None
 ) -> NoReturn | None:
     """
     short variant in case of args is not needed
-
-    WHY IT NEED
-    -----------
-     ll params passed by pytest while parametrisation as TUPLE!!!! so you cant miss any param in the middle!
     """
     pytest_func_tester(func_link=func_link, kwargs=kwargs, _EXPECTED=_EXPECTED, _MARK=_MARK, _COMMENT=_COMMENT)
 
 
 # =====================================================================================================================
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
-pass    # USAGE EXAMPLES
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
+pass    # USAGE EXAMPLES ----------------------------------------------------------------------------------------------
 
 
 def _func_example(arg1: Any, arg2: Any) -> str:
