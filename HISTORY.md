@@ -11,6 +11,10 @@
 ********************************************************************************
 ## NEWS
 
+0.0.12 (2024/06/18 12:57:55)
+------------------------------
+- [pytest_func_tester] fix import pytest_func_tester__no_args_kwargs  
+
 0.0.11 (2024/06/18 10:21:32)
 ------------------------------
 - [pytest_func_tester] add pytest_func_tester__no_args_kwargs  

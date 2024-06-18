@@ -35,7 +35,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 11)
+    VERSION: Tuple[int, int, int] = (0, 0, 12)
     TODO: List[str] = [
         "..."
     ]
@@ -43,7 +43,7 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[pytest_func_tester] add pytest_func_tester__no_args_kwargs"
+        "[pytest_func_tester] fix import pytest_func_tester__no_args_kwargs"
     ]
 
     # FINALIZE -----------------------------------------------
