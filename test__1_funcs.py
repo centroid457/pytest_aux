@@ -7,6 +7,7 @@ from tempfile import TemporaryDirectory
 
 from pytest import mark
 from funcs_aux import *
+from classes_aux import *
 
 
 # =====================================================================================================================
@@ -18,7 +19,7 @@ from pytest_aux import *
 # TODO: add tests for funcs!!!
 
 
-class Cls(Cmp):
+class Cls(CmpInst):
     def __init__(self, value):
         self.VALUE = value
 
