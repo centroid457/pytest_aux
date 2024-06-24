@@ -43,7 +43,10 @@ class PROJECT:
         "..."
     ]
     NEWS: List[str] = [
-        "[pytest_func_tester] fix import pytest_func_tester__no_args_kwargs"
+
+
+        "[TESTS] add some! +move into separated folder",
+
     ]
 
     # FINALIZE -----------------------------------------------
