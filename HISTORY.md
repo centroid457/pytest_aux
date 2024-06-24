@@ -11,6 +11,11 @@
 ********************************************************************************
 ## NEWS
 
+0.0.13 (2024/06/24 10:16:58)
+------------------------------
+- [CICD+BUDGES] apply last ver PYPI template  
+- [TESTS] add some! +move into separated folder  
+
 0.0.12 (2024/06/18 12:57:55)
 ------------------------------
 - [pytest_func_tester] fix import pytest_func_tester__no_args_kwargs  
