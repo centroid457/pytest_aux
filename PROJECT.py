@@ -19,6 +19,7 @@ class PROJECT:
     NAME_IMPORT: str = "pytest_aux"
     KEYWORDS: List[str] = [
         "pytest templates", "pytest examples", "pytest aux", "pytest parametrisation",
+        "pytest useful funcs"
     ]
     CLASSIFIERS_TOPICS_ADD: List[str] = [
         # "Topic :: Communications",
