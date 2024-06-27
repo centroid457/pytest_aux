@@ -9,7 +9,7 @@
 ![Commit/Count/y](https://img.shields.io/github/commit-activity/y/centroid457/pytest_aux)
 ![Commit/Count/m](https://img.shields.io/github/commit-activity/m/centroid457/pytest_aux)
 
-# pytest_aux (current v0.0.13/![Ver/Pypi Latest](https://img.shields.io/pypi/v/pytest_aux?label=pypi%20latest))
+# pytest_aux (current v0.0.14/![Ver/Pypi Latest](https://img.shields.io/pypi/v/pytest_aux?label=pypi%20latest))
 
 ## DESCRIPTION_SHORT
 templates/examples and aux for pytest
@@ -20,6 +20,7 @@ designed for ...
 
 ## Features
 1. parametrisation usage example + aux  
+2. testing objects - primitives for testing different types  
 
 
 ********************************************************************************

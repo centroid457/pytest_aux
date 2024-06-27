@@ -19,7 +19,8 @@ class PROJECT:
     NAME_IMPORT: str = "pytest_aux"
     KEYWORDS: list[str] = [
         "pytest templates", "pytest examples", "pytest aux", "pytest parametrisation",
-        "pytest useful funcs"
+        "pytest useful funcs",
+        "testing objects set",
     ]
     CLASSIFIERS_TOPICS_ADD: list[str] = [
         # "Topic :: Communications",
@@ -35,6 +36,7 @@ class PROJECT:
         # ["feat2", "block1", "block2"],
 
         "parametrisation usage example + aux",
+        "testing objects - primitives for testing different types",
     ]
 
     # HISTORY -----------------------------------------------
