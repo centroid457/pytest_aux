@@ -17,11 +17,11 @@ class PROJECT:
 
     # PROJECT ----------------------------------------------
     NAME_IMPORT: str = "pytest_aux"
-    KEYWORDS: List[str] = [
+    KEYWORDS: list[str] = [
         "pytest templates", "pytest examples", "pytest aux", "pytest parametrisation",
         "pytest useful funcs"
     ]
-    CLASSIFIERS_TOPICS_ADD: List[str] = [
+    CLASSIFIERS_TOPICS_ADD: list[str] = [
         # "Topic :: Communications",
         # "Topic :: Communications :: Email",
     ]
@@ -30,7 +30,7 @@ class PROJECT:
     # add DOUBLE SPACE at the end of all lines! for correct representation in MD-viewers
     DESCRIPTION_SHORT: str = "templates/examples and aux for pytest"
     DESCRIPTION_LONG: str = """designed for ..."""
-    FEATURES: List[str] = [
+    FEATURES: list[str] = [
         # "feat1",
         # ["feat2", "block1", "block2"],
 
@@ -38,16 +38,15 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: Tuple[int, int, int] = (0, 0, 13)
-    TODO: List[str] = [
+    VERSION: tuple[int, int, int] = (0, 0, 14)
+    TODO: list[str] = [
         "..."
     ]
-    FIXME: List[str] = [
+    FIXME: list[str] = [
         "..."
     ]
-    NEWS: List[str] = [
-        "[CICD+BUDGES] apply last ver PYPI template",
-        "[TESTS] add some! +move into separated folder",
+    NEWS: list[str] = [
+        "[PRIMITIVES] add/move here from all other modules",
     ]
 
     # FINALIZE -----------------------------------------------

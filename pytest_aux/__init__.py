@@ -17,7 +17,7 @@
 #     # EXX
 # )
 # ---------------------------------------------------------------------------------------------------------------------
-from .main import (
+from .pytest_tester import (
     # BASE
     pytest_func_tester,
     pytest_func_tester__no_kwargs,
@@ -30,5 +30,40 @@ from .main import (
 
     # EXX
 )
+# ---------------------------------------------------------------------------------------------------------------------
+from .primitives import (
+    # BASE
+
+    FUNC,
+    FUNC_NONE,
+    FUNC_TRUE,
+    FUNC_FALSE,
+    FUNC_EXX,
+
+    LAMBDA,
+    LAMBDA_NONE,
+    LAMBDA_TRUE,
+    LAMBDA_FALSE,
+    LAMBDA_EXX,
+
+    Exx,
+
+    ClsInt,
+    ClsFloat,
+    ClsStr,
+    ClsList,
+    ClsSet,
+    ClsDict,
+
+    ClsEmpty,
+    ClsCallable,
+
+    ClsFullTypes,
+
+    # AUX
+    # TYPES
+    # EXX
+)
+
 
 # =====================================================================================================================
