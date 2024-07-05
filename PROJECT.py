@@ -40,7 +40,7 @@ class PROJECT:
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 0, 14)
+    VERSION: tuple[int, int, int] = (0, 0, 15)
     TODO: list[str] = [
         "..."
     ]
@@ -48,7 +48,7 @@ class PROJECT:
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] add/move here from all other modules",
+        "[PRIMITIVES] add GEN_COMPR/FUNC_GEN/LAMBDA_GEN/ClsIterable/ClsGen",
     ]
 
     # FINALIZE -----------------------------------------------

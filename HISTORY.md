@@ -11,6 +11,10 @@
 ********************************************************************************
 ## NEWS
 
+0.0.15 (2024/07/05 11:27:57)
+------------------------------
+- [PRIMITIVES] add GEN_COMPR/FUNC_GEN/LAMBDA_GEN/ClsIterable/ClsGen  
+
 0.0.14 (2024/06/27 10:49:30)
 ------------------------------
 - [PRIMITIVES] add/move here from all other modules  
