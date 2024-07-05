@@ -30,7 +30,7 @@ def FUNC_EXX(*args, **kwargs) -> NoReturn:
     raise Exception("CALLABLE_EXX")
 
 
-def FUNC_GEN(*args, **kwargs) -> Generator[int]:
+def FUNC_GEN(*args, **kwargs) -> Generator:
     yield from range(5)
 
 
