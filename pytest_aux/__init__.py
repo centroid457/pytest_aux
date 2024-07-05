@@ -33,18 +33,21 @@ from .pytest_tester import (
 # ---------------------------------------------------------------------------------------------------------------------
 from .primitives import (
     # BASE
+    GEN_COMPR,
 
     FUNC,
     FUNC_NONE,
     FUNC_TRUE,
     FUNC_FALSE,
     FUNC_EXX,
+    FUNC_GEN,
 
     LAMBDA,
     LAMBDA_NONE,
     LAMBDA_TRUE,
     LAMBDA_FALSE,
     LAMBDA_EXX,
+    LAMBDA_GEN,
 
     Exx,
 
@@ -57,6 +60,8 @@ from .primitives import (
 
     ClsEmpty,
     ClsCallable,
+    ClsIterable,
+    ClsGen,
 
     ClsFullTypes,
 

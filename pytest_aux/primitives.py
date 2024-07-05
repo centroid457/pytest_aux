@@ -6,6 +6,10 @@ from typing import *
 
 
 # =====================================================================================================================
+GEN_COMPR = (i for i in range(3))
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 def FUNC(*args, **kwargs) -> None:
     pass
 
@@ -26,13 +30,19 @@ def FUNC_EXX(*args, **kwargs) -> NoReturn:
     raise Exception("CALLABLE_EXX")
 
 
+def FUNC_GEN(*args, **kwargs) -> Generator[int]:
+    yield from range(5)
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 LAMBDA = lambda *args, **kwargs: None
 LAMBDA_NONE = lambda *args, **kwargs: None
 LAMBDA_TRUE = lambda *args, **kwargs: True
 LAMBDA_FALSE = lambda *args, **kwargs: False
-# LAMBDA_EXX = lambda *args, **kwargs: raise Exception("LAMBDA_EXX")      # SyntaxError: invalid syntax
+# LAMBDA_EXX = lambda *args, **kwargs: raise Exception("LAMBDA_EXX")      # raise=SyntaxError: invalid syntax
 LAMBDA_EXX = lambda *args, **kwargs: FUNC_EXX()
+# LAMBDA_GEN = lambda *args, **kwargs: yield from range(5)      # yield=SyntaxError: invalid syntax
+LAMBDA_GEN = lambda *args, **kwargs: FUNC_GEN()
 
 
 # =====================================================================================================================
@@ -82,6 +92,30 @@ class ClsCallable:
         pass
 
 
+class ClsIterable:
+    def __iter__(self):
+        yield from range(5)
+
+
+class ClsGen:
+    def __init__(self, start=1, end=3):
+        self.start = start
+        self.end = end
+        self.current = start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current > self.end:
+            raise StopIteration
+        else:
+            result = self.current
+            self.current += 1
+            return result
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 class ClsFullTypes:
     attrZero = 0
 
@@ -95,17 +129,27 @@ class ClsFullTypes:
 
     attrFunc = FUNC
     attrFuncTrue = FUNC_TRUE
+    attrFuncExx = FUNC_EXX
+    attrFuncGen = FUNC_GEN
+
+    attrGenCompr = GEN_COMPR
 
     attrCls = ClsEmpty
     attrInst = ClsEmpty()
     attrInstMeth = ClsCallable().meth
+    attrClsCallable = ClsCallable
     attrInstCallable = ClsCallable()
+    attrClsIterable = ClsIterable
+    attrInstIterable = ClsIterable()
+    attrClsGen = ClsGen
+    attrInstGen = ClsGen()
 
     attrSet = {1,2,3}
     attrList = [1,2,3]
     attrTuple = (1,2,3)
     attrDict = {1:1}
     attrListInst = [*[ClsEmpty(), ] * 3, 1]
+
     @property
     def propertyInt(self) -> int:
         return 1
