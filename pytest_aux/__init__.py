@@ -63,6 +63,9 @@ from .primitives import (
     ClsIterable,
     ClsGen,
 
+    ClsEq,
+    ClsEqExx,
+
     ClsFullTypes,
 
     # AUX

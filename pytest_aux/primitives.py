@@ -116,6 +116,20 @@ class ClsGen:
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+class ClsEq:
+    def __init__(self, val: Any = None):
+        self.VAL = val
+
+    def __eq__(self, other):
+        return other == self.VAL
+
+
+class ClsEqExx:
+    def __eq__(self, other):
+        raise Exception()
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 class ClsFullTypes:
     attrZero = 0
 
