@@ -60,7 +60,7 @@ class PROJECT(PROJECT_BASE):
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 1, 0)
+    VERSION: tuple[int, int, int] = (0, 1, 1)
     TODO: list[str] = [
         "..."
     ]
@@ -68,8 +68,7 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] add ClsEq/ClsEqExx",
-        "[Pypi] apply new",
+        "[PRIMITIVES] zero extend ClsEq by NE__",
     ]
 
 
