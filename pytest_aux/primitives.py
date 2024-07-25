@@ -64,6 +64,8 @@ LAMBDA = lambda *args, **kwargs: None
 LAMBDA_NONE = lambda *args, **kwargs: None
 LAMBDA_TRUE = lambda *args, **kwargs: True
 LAMBDA_FALSE = lambda *args, **kwargs: False
+LAMBDA_LIST = lambda *args, **kwargs: FUNC_LIST(*args, **kwargs)
+LAMBDA_DICT = lambda *args, **kwargs: FUNC_DICT(*args, **kwargs)
 # LAMBDA_EXX = lambda *args, **kwargs: raise Exception("LAMBDA_EXX")      # raise=SyntaxError: invalid syntax
 LAMBDA_EXX = lambda *args, **kwargs: FUNC_EXX()
 # LAMBDA_GEN = lambda *args, **kwargs: yield from range(5)      # yield=SyntaxError: invalid syntax
@@ -174,6 +176,8 @@ class ClsFullTypes:
 
     attrFunc = FUNC
     attrFuncTrue = FUNC_TRUE
+    attrFuncList = FUNC_LIST
+    attrFuncDict = FUNC_DICT
     attrFuncExx = FUNC_EXX
     attrFuncGen = FUNC_GEN
 
