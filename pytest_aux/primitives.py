@@ -1,5 +1,14 @@
 """
-here i wish to collect all available variants useful in tests
+GOAL
+----
+collect all obvious variants of code objects
+
+USEFUL IDEAS
+------------
+- in tests
+- could be clearly used in docstrings without needless defining
+    assert get_bool(LAMBDA_EXX) is False
+
 """
 # ---------------------------------------------------------------------------------------------------------------------
 from typing import *
@@ -117,15 +126,21 @@ class ClsGen:
 
 # ---------------------------------------------------------------------------------------------------------------------
 class ClsEq:
-    def __init__(self, val: Any = None):
+    def __init__(self, val: Any = None, *args, **kwargs):
         self.VAL = val
 
     def __eq__(self, other):
         return other == self.VAL
 
+    def __ne__(self, other):
+        return other != self.VAL
 
-class ClsEqExx:
+
+class ClsEqExx(ClsEq):
     def __eq__(self, other):
+        raise Exception()
+
+    def __ne__(self, other):
         raise Exception()
 
 
