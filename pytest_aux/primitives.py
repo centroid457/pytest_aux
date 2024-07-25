@@ -48,6 +48,10 @@ def FUNC_LIST(*args, **kwargs) -> list[Any]:
 
 def FUNC_DICT(*args, **kwargs) -> dict[Any, Any | None]:
     """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+
     return like DICT(*args, **kwargs)
     """
     result = dict.fromkeys(args)
