@@ -9,11 +9,8 @@
 # from .main import (
 #     # BASE
 #     EXACT_OBJECTS,
-#
 #     # AUX
-#
 #     # TYPES
-#
 #     # EXX
 # )
 # ---------------------------------------------------------------------------------------------------------------------
@@ -23,11 +20,8 @@ from .pytest_tester import (
     pytest_func_tester__no_kwargs,
     pytest_func_tester__no_args,
     pytest_func_tester__no_args_kwargs,
-
     # AUX
-
     # TYPES
-
     # EXX
 )
 # ---------------------------------------------------------------------------------------------------------------------
