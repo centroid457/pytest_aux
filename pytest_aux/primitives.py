@@ -140,7 +140,7 @@ class ClsEmpty:
     pass
 
 
-class ClsCallable:
+class ClsCall:
     def __call__(self, *args, **kwargs):
         pass
 
@@ -148,12 +148,40 @@ class ClsCallable:
         pass
 
 
-class ClsIterable:
+class ClsIterYield:
+    """
+    CONSTRAINTS
+    -----------
+    YIELD and RETURN all are acceptable!
+    several iterations - work fine!
+
+        class Cls:
+        def __iter__(self):
+            yield from range(3)
+            # return iter(range(3))
+
+        obj = Cls()
+        for _ in range(2):
+            print()
+            for i in obj:
+                print(i)
+    """
+
     def __iter__(self):
-        yield from range(5)
+        # RETURN VARIANTS ------------
+        # return [1,2,3]  #TypeError: iter() returned non-iterator of type 'list'
+        # return range(5)  #TypeError: iter() returned non-iterator of type 'range'
+        # return iter([1,2,3])  #OK
+
+        # YIELD VARIANTS ------------    - MOST PREFERRED!(seek would be reset all time to the beginning!!!)
+        # yield from [1,2,3]  #OK
+        yield from range(5)   #OK
 
 
 class ClsGen:
+    """
+    ClsIterNext!
+    """
     def __init__(self, start=1, end=3):
         self.start = start
         self.end = end
@@ -245,11 +273,11 @@ class ClsFullTypes:
 
     attrCls = ClsEmpty
     attrInst = ClsEmpty()
-    attrInstMeth = ClsCallable().meth
-    attrClsCallable = ClsCallable
-    attrInstCallable = ClsCallable()
-    attrClsIterable = ClsIterable
-    attrInstIterable = ClsIterable()
+    attrInstMeth = ClsCall().meth
+    attrClsCallable = ClsCall
+    attrInstCallable = ClsCall()
+    attrClsIterable = ClsIterYield
+    attrInstIterable = ClsIterYield()
     attrClsGen = ClsGen
     attrInstGen = ClsGen()
 

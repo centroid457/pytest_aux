@@ -57,8 +57,8 @@ from .primitives import (
     ClsDict,
 
     ClsEmpty,
-    ClsCallable,
-    ClsIterable,
+    ClsCall,
+    ClsIterYield,
     ClsGen,
 
     ClsBoolTrue,
