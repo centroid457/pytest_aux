@@ -35,6 +35,22 @@ def FUNC_FALSE(*args, **kwargs) -> bool:
     return False
 
 
+def FUNC_LIST(*args, **kwargs) -> list[Any]:
+    """
+    return list(args) + list(kwargs)
+    """
+    return list(args) + list(kwargs)
+
+
+def FUNC_DICT(*args, **kwargs) -> dict[Any, Any | None]:
+    """
+    return like DICT(*args, **kwargs)
+    """
+    result = dict.fromkeys(args)
+    result.update(kwargs)
+    return result
+
+
 def FUNC_EXX(*args, **kwargs) -> NoReturn:
     raise Exception("CALLABLE_EXX")
 
