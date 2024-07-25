@@ -9,7 +9,7 @@
 ![Commit/Count/y](https://img.shields.io/github/commit-activity/y/centroid457/pytest_aux)
 ![Commit/Count/m](https://img.shields.io/github/commit-activity/m/centroid457/pytest_aux)
 
-# pytest_aux (current v0.1.2/![Ver/Pypi Latest](https://img.shields.io/pypi/v/pytest_aux?label=pypi%20latest))
+# pytest_aux (current v0.1.3/![Ver/Pypi Latest](https://img.shields.io/pypi/v/pytest_aux?label=pypi%20latest))
 
 ## DESCRIPTION_SHORT
 templates/examples and aux for pytest
