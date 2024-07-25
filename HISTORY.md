@@ -11,6 +11,10 @@
 ********************************************************************************
 ## NEWS
 
+0.1.4 (2024/07/25 16:35:53)
+------------------------------
+- [PRIMITIVES] renames ClsIterYield/Call  
+
 0.1.3 (2024/07/25 12:45:32)
 ------------------------------
 - [PRIMITIVES] add ClsBoolTrue/*False/*Exx  
@@ -30,7 +34,7 @@
 
 0.0.15 (2024/07/05 11:27:57)
 ------------------------------
-- [PRIMITIVES] add GEN_COMPR/FUNC_GEN/LAMBDA_GEN/ClsIterable/ClsGen  
+- [PRIMITIVES] add GEN_COMPR/FUNC_GEN/LAMBDA_GEN/ClsIterYield/ClsGen  
 
 0.0.14 (2024/06/27 10:49:30)
 ------------------------------
