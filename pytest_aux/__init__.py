@@ -39,6 +39,8 @@ from .primitives import (
     FUNC_NONE,
     FUNC_TRUE,
     FUNC_FALSE,
+    FUNC_LIST,
+    FUNC_DICT,
     FUNC_EXX,
     FUNC_GEN,
 
@@ -46,6 +48,8 @@ from .primitives import (
     LAMBDA_NONE,
     LAMBDA_TRUE,
     LAMBDA_FALSE,
+    LAMBDA_LIST,
+    LAMBDA_DICT,
     LAMBDA_EXX,
     LAMBDA_GEN,
 
