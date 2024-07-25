@@ -61,11 +61,13 @@ from .primitives import (
     ClsIterable,
     ClsGen,
 
+    ClsBoolTrue,
+    ClsBoolFalse,
+    ClsBoolExx,
     ClsEq,
     ClsEqExx,
 
     ClsFullTypes,
-
     # AUX
     # TYPES
     # EXX

@@ -115,6 +115,27 @@ class ClsDict(dict):
 
 
 # =====================================================================================================================
+class ClsInitArgsKwargs:
+    """
+    GOAL
+    ----
+    just apply init with any args/kwargs
+    so no Exception would raise in any case!
+    in first idea it was not matter to keep them in instance but did it just in case
+
+    CREATED SPECIALLY FOR
+    ---------------------
+    ClsBoolTrue/*False
+    """
+    ARGS: tuple
+    KWARGS: dict
+
+    def __init__(self, *args, **kwargs):
+        self.ARGS = args
+        self.KWARGS = kwargs
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 class ClsEmpty:
     pass
 
@@ -148,6 +169,37 @@ class ClsGen:
             result = self.current
             self.current += 1
             return result
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+class ClsBoolTrue(ClsInitArgsKwargs):
+    """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+    """
+    def __bool__(self):
+        return True
+
+
+class ClsBoolFalse(ClsInitArgsKwargs):
+    """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+    """
+    def __bool__(self):
+        return False
+
+
+class ClsBoolExx(ClsInitArgsKwargs):
+    """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+    """
+    def __bool__(self):
+        raise Exception()
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -200,6 +252,13 @@ class ClsFullTypes:
     attrInstIterable = ClsIterable()
     attrClsGen = ClsGen
     attrInstGen = ClsGen()
+
+    attrClsBoolTrue = ClsBoolTrue
+    attrInstBoolTrue = ClsBoolTrue()
+    attrClsBoolFalse = ClsBoolFalse
+    attrInstBoolFalse = ClsBoolFalse()
+    attrClsBoolExx = ClsBoolExx
+    attrInstBooExx = ClsBoolExx()
 
     attrSet = {1,2,3}
     attrList = [1,2,3]
