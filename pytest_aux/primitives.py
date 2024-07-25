@@ -37,6 +37,10 @@ def FUNC_FALSE(*args, **kwargs) -> bool:
 
 def FUNC_LIST(*args, **kwargs) -> list[Any]:
     """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+
     return list(args) + list(kwargs)
     """
     return list(args) + list(kwargs)
