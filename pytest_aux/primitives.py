@@ -115,6 +115,10 @@ class ClsDict(dict):
 
 
 # =====================================================================================================================
+class Cls:
+    pass
+
+
 class ClsEmpty:
     pass
 
@@ -303,10 +307,16 @@ class ClsFullTypes:
     attrCls = ClsEmpty
     attrInst = ClsEmpty()
     attrInstMeth = ClsCall().meth
-    attrClsCallable = ClsCall
-    attrInstCallable = ClsCall()
-    attrClsIterable = ClsIterYield
-    attrInstIterable = ClsIterYield()
+
+    attrClsCall = ClsCall
+    attrInstCall = ClsCall()
+    attrClsCallTrue = ClsCallTrue
+    attrInstCallTrue = ClsCallTrue()
+    attrClsCallExx = ClsCallExx
+    attrInstCallExx = ClsCallExx()
+
+    attrClsIterYield = ClsIterYield
+    attrInstIterYield = ClsIterYield()
     attrClsGen = ClsGen
     attrInstGen = ClsGen()
 
@@ -321,7 +331,7 @@ class ClsFullTypes:
     attrList = [1,2,3]
     attrTuple = (1,2,3)
     attrDict = {1:1}
-    attrListInst = [*[ClsEmpty(), ] * 3, 1]
+    attrListInst = [*[Cls(), ] * 3, 1]
 
     @property
     def propertyInt(self) -> int:

@@ -56,6 +56,7 @@ from .primitives import (
     ClsSet,
     ClsDict,
 
+    Cls,
     ClsEmpty,
 
     ClsInitArgsKwargs,
