@@ -11,6 +11,10 @@
 ********************************************************************************
 ## NEWS
 
+0.1.5 (2024/07/26 10:19:31)
+------------------------------
+- [PRIMITIVES] extend simple ClsCall to ClsCallNone/False/True/Exx +add ClsInitExx  
+
 0.1.4 (2024/07/25 16:35:53)
 ------------------------------
 - [PRIMITIVES] renames ClsIterYield/Call  

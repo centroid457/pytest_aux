@@ -60,7 +60,7 @@ class PROJECT(PROJECT_BASE):
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 1, 4)
+    VERSION: tuple[int, int, int] = (0, 1, 5)
     TODO: list[str] = [
         "..."
     ]
@@ -68,7 +68,7 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] renames ClsIterYield/Call",
+        "[PRIMITIVES] extend simple ClsCall to ClsCallNone/False/True/Exx +add ClsInitExx",
     ]
 
 
