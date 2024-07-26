@@ -11,6 +11,10 @@
 ********************************************************************************
 ## NEWS
 
+0.1.6 (2024/07/26 10:27:21)
+------------------------------
+- [PRIMITIVES] fix ClsFullTypes +zero add Cls as Empty  
+
 0.1.5 (2024/07/26 10:19:31)
 ------------------------------
 - [PRIMITIVES] extend simple ClsCall to ClsCallNone/False/True/Exx +add ClsInitExx  
