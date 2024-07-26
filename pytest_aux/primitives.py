@@ -115,6 +115,11 @@ class ClsDict(dict):
 
 
 # =====================================================================================================================
+class ClsEmpty:
+    pass
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 class ClsInitArgsKwargs:
     """
     GOAL
@@ -135,19 +140,74 @@ class ClsInitArgsKwargs:
         self.KWARGS = kwargs
 
 
+class ClsInitExx:
+    def __init__(self, *args, **kwargs) -> NoReturn:
+        raise Exception()
+
+
 # ---------------------------------------------------------------------------------------------------------------------
-class ClsEmpty:
+class ClsCall:
+    def __call__(self, *args, **kwargs) -> None:
+        pass
+
+    def meth(self, *args, **kwargs) -> None:
+        """
+        for other results like None/True/False/Exx use direct LAMBDA/FUNC_*! or wait special necessity.
+        """
+        pass
+
+
+class ClsCallNone(ClsCall):
     pass
 
 
-class ClsCall:
-    def __call__(self, *args, **kwargs):
-        pass
-
-    def meth(self, *args, **kwargs):
-        pass
+class ClsCallTrue:
+    def __call__(self, *args, **kwargs) -> bool:
+        return True
 
 
+class ClsCallFalse:
+    def __call__(self, *args, **kwargs) -> bool:
+        return False
+
+
+class ClsCallExx:
+    def __call__(self, *args, **kwargs) -> NoReturn:
+        raise Exception()
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+class ClsBoolTrue(ClsInitArgsKwargs):
+    """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+    """
+    def __bool__(self):
+        return True
+
+
+class ClsBoolFalse(ClsInitArgsKwargs):
+    """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+    """
+    def __bool__(self):
+        return False
+
+
+class ClsBoolExx(ClsInitArgsKwargs):
+    """
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+    """
+    def __bool__(self):
+        raise Exception()
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 class ClsIterYield:
     """
     CONSTRAINTS
@@ -197,37 +257,6 @@ class ClsGen:
             result = self.current
             self.current += 1
             return result
-
-
-# ---------------------------------------------------------------------------------------------------------------------
-class ClsBoolTrue(ClsInitArgsKwargs):
-    """
-    CREATED SPECIALLY FOR
-    ---------------------
-    funcs_aux.Valid.get_bool as test variant
-    """
-    def __bool__(self):
-        return True
-
-
-class ClsBoolFalse(ClsInitArgsKwargs):
-    """
-    CREATED SPECIALLY FOR
-    ---------------------
-    funcs_aux.Valid.get_bool as test variant
-    """
-    def __bool__(self):
-        return False
-
-
-class ClsBoolExx(ClsInitArgsKwargs):
-    """
-    CREATED SPECIALLY FOR
-    ---------------------
-    funcs_aux.Valid.get_bool as test variant
-    """
-    def __bool__(self):
-        raise Exception()
 
 
 # ---------------------------------------------------------------------------------------------------------------------
