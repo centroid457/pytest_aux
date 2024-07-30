@@ -60,7 +60,7 @@ class PROJECT(PROJECT_BASE):
     ]
 
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 1, 6)
+    VERSION: tuple[int, int, int] = (0, 1, 7)
     TODO: list[str] = [
         "..."
     ]
@@ -68,7 +68,7 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] fix ClsFullTypes +zero add Cls as Empty",
+        "[PRIMITIVES] add FUNC_ALL/ANY//LAMBDA*",
     ]
 
 
