@@ -59,7 +59,7 @@ class PROJECT(PROJECT_BASE):
         "testing objects - primitives for testing different types",
     ]
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 1, 7)
+    VERSION: tuple[int, int, int] = (0, 1, 8)
     TODO: list[str] = [
         "..."
     ]
@@ -67,8 +67,6 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-
-
         "[PRIMITIVES] separate FUNC_LIST to FUNC_LIST_DIRECT/*VALUES",
     ]
 
