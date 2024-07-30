@@ -78,8 +78,28 @@ def test__pytest_func_tester(func_link, args, kwargs, _EXPECTED, _pytestExpected
         ((1, 1), {"2": 22, "3": 33}, [1, 1, "2", "3"]),
     ]
 )
-def test__func_list(args, kwargs, _EXPECTED):
+def test__func_list_direct(args, kwargs, _EXPECTED):
     func_link = LAMBDA_LIST_DIRECT
+    pytest_func_tester(func_link, args, kwargs, _EXPECTED)
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+@pytest.mark.parametrize(
+    argnames="args, kwargs, _EXPECTED",
+    argvalues=[
+        ((), {}, []),
+        (None, {}, [None, ]),
+        (1, {}, [1, ]),
+        ((1, 1), {}, [1, 1]),
+
+        ((1, 1), None, [1, 1]),
+        ((1, 1), {}, [1, 1]),
+        ((1, 1), {"2": 22}, [1, 1, 22]),
+        ((1, 1), {"2": 22, "3": 33}, [1, 1, 22, 33]),
+    ]
+)
+def test__func_list_values(args, kwargs, _EXPECTED):
+    func_link = LAMBDA_LIST_VALUES
     pytest_func_tester(func_link, args, kwargs, _EXPECTED)
 
 
