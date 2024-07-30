@@ -63,7 +63,7 @@ def test__pytest_func_tester(func_link, args, kwargs, _EXPECTED, _pytestExpected
         assert _pytestExpected
 
 
-# -----------------------------------------------------------------------------------------------------------------
+# =====================================================================================================================
 @pytest.mark.parametrize(
     argnames="args, kwargs, _EXPECTED",
     argvalues=[
@@ -82,7 +82,8 @@ def test__func_list(args, kwargs, _EXPECTED):
     func_link = LAMBDA_LIST
     pytest_func_tester(func_link, args, kwargs, _EXPECTED)
 
-# -----------------------------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------------------------------
 @pytest.mark.parametrize(
     argnames="args, kwargs, _EXPECTED",
     argvalues=[
@@ -99,6 +100,53 @@ def test__func_list(args, kwargs, _EXPECTED):
 )
 def test__func_dict(args, kwargs, _EXPECTED):
     func_link = LAMBDA_DICT
+    pytest_func_tester(func_link, args, kwargs, _EXPECTED)
+
+
+# =====================================================================================================================
+@pytest.mark.parametrize(
+    argnames="args, kwargs, _EXPECTED",
+    argvalues=[
+        ((), {}, True),
+        (None, {}, False),
+        (1, {}, True),
+        ((1, 1), {}, True),
+
+        ((1, 1), None, True),
+        ((1, 1), {}, True),
+        ((1, 1), {"2": 22}, True),
+        ((1, 1), {"2": 22, "3": 33}, True),
+
+        ((1, 1), {"2": 22, "3": None}, False),
+    ]
+)
+def test__func_all(args, kwargs, _EXPECTED):
+    func_link = LAMBDA_ALL
+    pytest_func_tester(func_link, args, kwargs, _EXPECTED)
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+@pytest.mark.parametrize(
+    argnames="args, kwargs, _EXPECTED",
+    argvalues=[
+        ((), {}, False),
+        (None, {}, False),
+        (1, {}, True),
+        ((1, 1), {}, True),
+
+        ((1, 1), None, True),
+        ((1, 1), {}, True),
+        ((1, 1), {"2": 22}, True),
+        ((1, 1), {"2": 22, "3": 33}, True),
+
+        ((1, 1), {"2": 22, "3": None}, True),
+        ((1, None), {"2": 22, "3": None}, True),
+        ((None, None), {"2": True, "3": None}, True),
+        ((None, None), {"2": False, "3": None}, False),
+    ]
+)
+def test__func_any(args, kwargs, _EXPECTED):
+    func_link = LAMBDA_ANY
     pytest_func_tester(func_link, args, kwargs, _EXPECTED)
 
 

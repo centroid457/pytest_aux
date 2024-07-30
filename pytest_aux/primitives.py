@@ -59,6 +59,8 @@ def FUNC_ANY(*args, **kwargs) -> bool:
 
 def FUNC_LIST(*args, **kwargs) -> list[Any]:
     """
+    DIRECT LIST() for Args+Kwargs
+
     CREATED SPECIALLY FOR
     ---------------------
     funcs_aux.Valid.get_bool as test variant
@@ -70,6 +72,8 @@ def FUNC_LIST(*args, **kwargs) -> list[Any]:
 
 def FUNC_DICT(*args, **kwargs) -> dict[Any, Any | None]:
     """
+    DIRECT DICT() for Args+Kwargs
+
     CREATED SPECIALLY FOR
     ---------------------
     funcs_aux.Valid.get_bool as test variant
