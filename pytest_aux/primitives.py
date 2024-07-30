@@ -35,13 +35,35 @@ def FUNC_FALSE(*args, **kwargs) -> bool:
     return False
 
 
+def FUNC_ALL(*args, **kwargs) -> bool:
+    """
+    return all(args) and all(kwargs.values())
+
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.run as tests
+    """
+    return all(args) and all(kwargs.values())
+
+
+def FUNC_ANY(*args, **kwargs) -> bool:
+    """
+    return any(args) or any(kwargs.values())
+
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.run as tests
+    """
+    return any(args) or any(kwargs.values())
+
+
 def FUNC_LIST(*args, **kwargs) -> list[Any]:
     """
     CREATED SPECIALLY FOR
     ---------------------
     funcs_aux.Valid.get_bool as test variant
 
-    return list(args) + list(kwargs)
+    return list(args) + list(kwargs)    # TODO: decide about list(kwargs.values())
     """
     return list(args) + list(kwargs)
 
@@ -72,8 +94,13 @@ LAMBDA = lambda *args, **kwargs: None
 LAMBDA_NONE = lambda *args, **kwargs: None
 LAMBDA_TRUE = lambda *args, **kwargs: True
 LAMBDA_FALSE = lambda *args, **kwargs: False
+
+LAMBDA_ALL = lambda *args, **kwargs: FUNC_ALL(*args, **kwargs)
+LAMBDA_ANY = lambda *args, **kwargs: FUNC_ANY(*args, **kwargs)
+
 LAMBDA_LIST = lambda *args, **kwargs: FUNC_LIST(*args, **kwargs)
 LAMBDA_DICT = lambda *args, **kwargs: FUNC_DICT(*args, **kwargs)
+
 # LAMBDA_EXX = lambda *args, **kwargs: raise Exception("LAMBDA_EXX")      # raise=SyntaxError: invalid syntax
 LAMBDA_EXX = lambda *args, **kwargs: FUNC_EXX()
 # LAMBDA_GEN = lambda *args, **kwargs: yield from range(5)      # yield=SyntaxError: invalid syntax
