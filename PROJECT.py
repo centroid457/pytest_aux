@@ -58,7 +58,6 @@ class PROJECT(PROJECT_BASE):
         "parametrisation usage example + aux",
         "testing objects - primitives for testing different types",
     ]
-
     # HISTORY -----------------------------------------------
     VERSION: tuple[int, int, int] = (0, 1, 7)
     TODO: list[str] = [
