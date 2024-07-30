@@ -79,7 +79,7 @@ def test__pytest_func_tester(func_link, args, kwargs, _EXPECTED, _pytestExpected
     ]
 )
 def test__func_list(args, kwargs, _EXPECTED):
-    func_link = LAMBDA_LIST
+    func_link = LAMBDA_LIST_DIRECT
     pytest_func_tester(func_link, args, kwargs, _EXPECTED)
 
 

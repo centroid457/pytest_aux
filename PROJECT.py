@@ -67,7 +67,9 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] add FUNC_ALL/ANY//LAMBDA*",
+
+
+        "[PRIMITIVES] separate FUNC_LIST to FUNC_LIST_DIRECT/*VALUES",
     ]
 
 

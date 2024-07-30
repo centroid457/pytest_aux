@@ -57,7 +57,7 @@ def FUNC_ANY(*args, **kwargs) -> bool:
     return any(args) or any(kwargs.values())
 
 
-def FUNC_LIST(*args, **kwargs) -> list[Any]:
+def FUNC_LIST_DIRECT(*args, **kwargs) -> list[Any]:
     """
     DIRECT LIST() for Args+Kwargs
 
@@ -65,9 +65,22 @@ def FUNC_LIST(*args, **kwargs) -> list[Any]:
     ---------------------
     funcs_aux.Valid.get_bool as test variant
 
-    return list(args) + list(kwargs)    # TODO: decide about list(kwargs.values())
+    return list(args) + list(kwargs)
     """
     return list(args) + list(kwargs)
+
+
+def FUNC_LIST_VALUES(*args, **kwargs) -> list[Any]:
+    """
+    LIST() values for Args+Kwargs.values()
+
+    CREATED SPECIALLY FOR
+    ---------------------
+    funcs_aux.Valid.get_bool as test variant
+
+    return list(args) + list(kwargs.values())
+    """
+    return list(args) + list(kwargs.values())
 
 
 def FUNC_DICT(*args, **kwargs) -> dict[Any, Any | None]:
@@ -102,7 +115,8 @@ LAMBDA_FALSE = lambda *args, **kwargs: False
 LAMBDA_ALL = lambda *args, **kwargs: FUNC_ALL(*args, **kwargs)
 LAMBDA_ANY = lambda *args, **kwargs: FUNC_ANY(*args, **kwargs)
 
-LAMBDA_LIST = lambda *args, **kwargs: FUNC_LIST(*args, **kwargs)
+LAMBDA_LIST_DIRECT = lambda *args, **kwargs: FUNC_LIST_DIRECT(*args, **kwargs)
+LAMBDA_LIST_VALUES = lambda *args, **kwargs: FUNC_LIST_VALUES(*args, **kwargs)
 LAMBDA_DICT = lambda *args, **kwargs: FUNC_DICT(*args, **kwargs)
 
 # LAMBDA_EXX = lambda *args, **kwargs: raise Exception("LAMBDA_EXX")      # raise=SyntaxError: invalid syntax
@@ -328,7 +342,7 @@ class ClsFullTypes:
 
     attrFunc = FUNC
     attrFuncTrue = FUNC_TRUE
-    attrFuncList = FUNC_LIST
+    attrFuncList = FUNC_LIST_DIRECT
     attrFuncDict = FUNC_DICT
     attrFuncExx = FUNC_EXX
     attrFuncGen = FUNC_GEN
