@@ -67,7 +67,7 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] separate FUNC_LIST to FUNC_LIST_DIRECT/*VALUES",
+        "[PRIMITIVES] add INST_* for all acceptable classes",
     ]
 
 

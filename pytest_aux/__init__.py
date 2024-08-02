@@ -53,7 +53,7 @@ from .primitives import (
     LAMBDA_EXX,
     LAMBDA_GEN,
 
-    Exx,
+    Exx,            INST_EXX,
 
     ClsInt,
     ClsFloat,
@@ -62,29 +62,29 @@ from .primitives import (
     ClsSet,
     ClsDict,
 
-    Cls,
-    ClsEmpty,
+    Cls,            INST,
+    ClsEmpty,       INST_EMPTY,
 
     ClsInitArgsKwargs,
     ClsInitExx,
 
-    ClsCall,
-    ClsCallNone,
-    ClsCallTrue,
-    ClsCallFalse,
-    ClsCallExx,
+    ClsCall,        INST_CALL,
+    ClsCallNone,    INST_CALL_NONE,
+    ClsCallTrue,    INST_CALL_TRUE,
+    ClsCallFalse,   INST_CALL_FALSE,
+    ClsCallExx,     INST_CALL_EXX,
 
-    ClsBoolTrue,
-    ClsBoolFalse,
-    ClsBoolExx,
+    ClsBoolTrue,    INST_BOOL_TRUE,
+    ClsBoolFalse,   INST_BOOL_FALSE,
+    ClsBoolExx,     INST_BOOL_EXX,
 
-    ClsIterYield,
-    ClsGen,
+    ClsIterYield,   INST_ITER_YIELD,
+    ClsGen,         INST_GEN,
 
-    ClsEq,
-    ClsEqExx,
+    ClsEq,          INST_EQ,
+    ClsEqExx,       INST_EQ_EXX,
 
-    ClsFullTypes,
+    ClsFullTypes,   INST_FULL_TYPES,
     # AUX
     # TYPES
     # EXX

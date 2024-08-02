@@ -128,7 +128,7 @@ LAMBDA_GEN = lambda *args, **kwargs: FUNC_GEN()
 # =====================================================================================================================
 class Exx(Exception):
     pass
-
+INST_EXX = Exx()
 
 # ---------------------------------------------------------------------------------------------------------------------
 # class ClsBool(bool):  # cant use it!
@@ -162,10 +162,12 @@ class ClsDict(dict):
 # =====================================================================================================================
 class Cls:
     pass
+INST = Cls()
 
 
 class ClsEmpty:
     pass
+INST_EMPTY = ClsEmpty()
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -204,25 +206,30 @@ class ClsCall:
         for other results like None/True/False/Exx use direct LAMBDA/FUNC_*! or wait special necessity.
         """
         pass
+INST_CALL = ClsCall()
 
 
 class ClsCallNone(ClsCall):
     pass
+INST_CALL_NONE = ClsCallNone()
 
 
 class ClsCallTrue:
     def __call__(self, *args, **kwargs) -> bool:
         return True
+INST_CALL_TRUE = ClsCallTrue()
 
 
 class ClsCallFalse:
     def __call__(self, *args, **kwargs) -> bool:
         return False
+INST_CALL_FALSE = ClsCallFalse()
 
 
 class ClsCallExx:
     def __call__(self, *args, **kwargs) -> NoReturn:
         raise Exception()
+INST_CALL_EXX = ClsCallExx()
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -234,6 +241,7 @@ class ClsBoolTrue(ClsInitArgsKwargs):
     """
     def __bool__(self):
         return True
+INST_BOOL_TRUE = ClsBoolTrue()
 
 
 class ClsBoolFalse(ClsInitArgsKwargs):
@@ -244,6 +252,7 @@ class ClsBoolFalse(ClsInitArgsKwargs):
     """
     def __bool__(self):
         return False
+INST_BOOL_FALSE = ClsBoolFalse()
 
 
 class ClsBoolExx(ClsInitArgsKwargs):
@@ -254,6 +263,7 @@ class ClsBoolExx(ClsInitArgsKwargs):
     """
     def __bool__(self):
         raise Exception()
+INST_BOOL_EXX = ClsBoolExx()
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -285,6 +295,7 @@ class ClsIterYield:
         # YIELD VARIANTS ------------    - MOST PREFERRED!(seek would be reset all time to the beginning!!!)
         # yield from [1,2,3]  #OK
         yield from range(5)   #OK
+INST_ITER_YIELD = ClsIterYield()
 
 
 class ClsGen:
@@ -306,6 +317,7 @@ class ClsGen:
             result = self.current
             self.current += 1
             return result
+INST_GEN = ClsGen()
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -318,14 +330,16 @@ class ClsEq:
 
     def __ne__(self, other):
         return other != self.VAL
+INST_EQ = ClsEq()
 
 
-class ClsEqExx(ClsEq):
+class ClsEqExx(ClsInitArgsKwargs):
     def __eq__(self, other):
         raise Exception()
 
     def __ne__(self, other):
         raise Exception()
+INST_EQ_EXX = ClsEqExx()
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -393,6 +407,7 @@ class ClsFullTypes:
         raise Exception("exxMsg")
     def methFunc(self) -> Callable:
         return FUNC
+INST_FULL_TYPES = ClsFullTypes()
 
 
 # =====================================================================================================================
