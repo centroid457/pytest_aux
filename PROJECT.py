@@ -59,7 +59,7 @@ class PROJECT(PROJECT_BASE):
         "testing objects - primitives for testing different types",
     ]
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 1, 9)
+    VERSION: tuple[int, int, int] = (0, 1, 10)
     TODO: list[str] = [
         "..."
     ]
@@ -67,7 +67,7 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] add INST_* for all acceptable classes",
+        "some improvements",
     ]
 
 
