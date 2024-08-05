@@ -1,8 +1,6 @@
 from typing import *
 import pytest
 
-import pathlib
-
 from pytest import mark
 from funcs_aux import *
 from classes_aux import *
@@ -39,19 +37,19 @@ def test____LE__():
     argnames="func_link, args, kwargs, _EXPECTED, _pytestExpected",
     argvalues=[
         # not callable ------------
-        (True, Value_NotPassed, None, True, True),
+        (True, Default, None, True, True),
         (True, 111, {111: 222}, True, True),
-        (False, Value_NotPassed, {}, True, False),
+        (False, Default, {}, True, False),
 
         # callable ------------
-        (lambda value: value, Value_NotPassed, {}, True, False),
+        (lambda value: value, Default, {}, True, False),
 
         (lambda value: value, None, {}, True, False),
         (lambda value: value, None, {}, None, True),
         (lambda value: value, True, {}, True, True),
         (lambda value: value, (True, ), {}, True, True),
-        (lambda value: value, Value_NotPassed, {"value": True}, True, True),
-        (lambda value: value, Value_NotPassed, {"value": None}, True, False),
+        (lambda value: value, Default, {"value": True}, True, True),
+        (lambda value: value, Default, {"value": None}, True, False),
     ]
 )
 def test__pytest_func_tester(func_link, args, kwargs, _EXPECTED, _pytestExpected):

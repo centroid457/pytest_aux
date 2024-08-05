@@ -1,4 +1,3 @@
-import pathlib
 from typing import *
 import pytest
 
@@ -13,22 +12,30 @@ pass
 
 # =====================================================================================================================
 def pytest_func_tester(
-        func_link: Union[Callable[..., Union[Any, NoReturn]], Any], # if func would get Exx - instance of exx would be returned for value!
-        args: Union[tuple[Any], Any] = Value_NotPassed,
-        kwargs: Optional[dict[str, Any]] = None,
-        _EXPECTED: Union[Any, Exception, Type[Exception]] = True,  # EXACT VALUE OR ExxClass
+        func_link: TYPE__SOURCE_LINK, # if func would get Exx - instance of exx would be returned for value!
+        args: TYPE__ARGS = (),
+        kwargs: TYPE__KWARGS = None,
+        _EXPECTED: Union[Any, TYPE__EXCEPTION] = True,  # EXACT VALUE OR ExxClass
 
+        # TODO: add validation func like in Valid!??
         _MARK: pytest.MarkDecorator | None = None,
         _COMMENT: str | None = None
 ) -> NoReturn | None:
     """
-    function which test target func with exact parameters
-    :return: Exception only on AssertionError, no exception withing target func!
+    NOTE
+    ----
+    this is same as funcs_aux.Valid! except following:
+        - if validation is Fail - raise assert!
+        - no skips/cumulates/logs/ last_results/*values
+
+    GOAL
+    ----
+    test target func with exact parameters
+    no exception withing target func!
+
+    TODO: apply Valid or merge them into single one!
     """
-    if TypeChecker.check__nested__by_cls_or_inst(args, Value_NotPassed):    # DONT CHANGE just to "args == Value_NotPassed"!!! see tests!!!
-        args = ()
-    if not isinstance(args, tuple):
-        args = (args, )
+    args = args__ensure_tuple(args)
     kwargs = kwargs or dict()
     comment = _COMMENT or ""
 
