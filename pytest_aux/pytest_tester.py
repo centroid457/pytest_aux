@@ -39,7 +39,7 @@ def pytest_func_tester(
     kwargs = kwargs or dict()
     comment = _COMMENT or ""
 
-    if TypeChecker.check__func_or_meth(func_link):
+    if TypeChecker.check__callable_func_meth_inst(func_link):
         try:
             actual_value = func_link(*args, **kwargs)
         except Exception as exx:
