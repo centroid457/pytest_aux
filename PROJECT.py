@@ -67,7 +67,8 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "some improvements",
+        "[PRIMITIVES] add CALLABLE_* constants",
+        "[ClsFullTypes] extend methods by classmethod/static*/property/classmeth+property",
     ]
 
 

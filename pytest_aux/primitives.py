@@ -393,6 +393,14 @@ class ClsFullTypes:
     attrListInst = [*[Cls(), ] * 3, 1]
 
     @property
+    def propertyNone(self) -> None:
+        return
+    @classmethod
+    @property
+    def propertyClassmethodNone(cls) -> None:
+        return
+
+    @property
     def propertyInt(self) -> int:
         return 1
     @property
@@ -401,13 +409,42 @@ class ClsFullTypes:
     @property
     def propertyFunc(self) -> Callable:
         return FUNC
+
+    def methNone(self) -> None:
+        return
     def methInt(self) -> int:
         return 1
     def methExx(self) -> NoReturn:
         raise Exception("exxMsg")
     def methFunc(self) -> Callable:
         return FUNC
+    @classmethod
+    def classmethodNone(cls) -> None:
+        return
+    @staticmethod
+    def staticmethodNone() -> None:
+        return
 INST_FULL_TYPES = ClsFullTypes()
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+CALLABLE_LAMBDA = LAMBDA
+CALLABLE_FUNC = FUNC
+
+CALLABLE_CLS = ClsCall
+CALLABLE_INST = ClsCall()
+
+CALLABLE_METH_CLS = ClsFullTypes.methNone
+CALLABLE_METH_CLS_CLASSMETHOD = ClsFullTypes.classmethodNone
+CALLABLE_METH_CLS_STATICMETHOD = ClsFullTypes.staticmethodNone
+CALLABLE_METH_CLS_PROPERTY = ClsFullTypes.propertyNone
+CALLABLE_METH_CLS_PROPERTY_CLASSMETHOD = ClsFullTypes.propertyClassmethodNone
+
+CALLABLE_METH_INST = ClsFullTypes().methNone
+CALLABLE_METH_INST_CLASSMETHOD = ClsFullTypes().classmethodNone
+CALLABLE_METH_INST_STATICMETHOD = ClsFullTypes().staticmethodNone
+CALLABLE_METH_INST_PROPERTY = ClsFullTypes().propertyNone
+CALLABLE_METH_INST_PROPERTY_CLASSMETHOD = ClsFullTypes().propertyClassmethodNone
 
 
 # =====================================================================================================================
