@@ -11,6 +11,11 @@
 ********************************************************************************
 ## NEWS
 
+0.1.11 (2024/08/06 14:40:49)
+------------------------------
+- [PRIMITIVES] add CALLABLE_* constants  
+- [ClsFullTypes] extend methods by classmethod/static*/property/classmeth+property  
+
 0.1.10 (2024/08/05 15:09:07)
 ------------------------------
 - some improvements  
