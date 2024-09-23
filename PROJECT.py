@@ -59,7 +59,7 @@ class PROJECT(PROJECT_BASE):
         "testing objects - primitives for testing different types",
     ]
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 1, 11)
+    VERSION: tuple[int, int, int] = (0, 1, 12)
     TODO: list[str] = [
         "..."
     ]
@@ -67,8 +67,7 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] add CALLABLE_* constants",
-        "[ClsFullTypes] extend methods by classmethod/static*/property/classmeth+property",
+        "[PRIMITIVES] add ClsEqTrue/False",
     ]
 
 

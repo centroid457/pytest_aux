@@ -82,6 +82,8 @@ from .primitives import (
     ClsGen,         INST_GEN,
 
     ClsEq,          INST_EQ,
+    ClsEqTrue,      INST_EQ_TRUE,
+    ClsEqFalse,     INST_EQ_FALSE,
     ClsEqExx,       INST_EQ_EXX,
 
     ClsFullTypes,   INST_FULL_TYPES,

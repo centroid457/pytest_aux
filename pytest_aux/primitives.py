@@ -333,6 +333,22 @@ class ClsEq:
 INST_EQ = ClsEq()
 
 
+class ClsEqTrue(ClsInitArgsKwargs):
+    def __eq__(self, other):
+        raise True
+    def __ne__(self, other):
+        raise False
+INST_EQ_TRUE = ClsEqTrue()
+
+
+class ClsEqFalse(ClsInitArgsKwargs):
+    def __eq__(self, other):
+        raise False
+    def __ne__(self, other):
+        raise True
+INST_EQ_FALSE = ClsEqFalse()
+
+
 class ClsEqExx(ClsInitArgsKwargs):
     def __eq__(self, other):
         raise Exception()
