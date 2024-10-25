@@ -49,8 +49,8 @@ class PROJECT(PROJECT_BASE):
 
     # README -----------------------------------------------
     # add DOUBLE SPACE at the end of all lines! for correct representation in MD-viewers
-    DESCRIPTION_SHORT: str = "templates/examples and aux for pytest"
-    DESCRIPTION_LONG: str = """designed for ..."""
+    DESCRIPTION_SHORT: str = "all moved into module FUNCS_AUXt"
+    DESCRIPTION_LONG: str = """ """
     FEATURES: list[str] = [
         # "feat1",
         # ["feat2", "block1", "block2"],
@@ -59,7 +59,7 @@ class PROJECT(PROJECT_BASE):
         "testing objects - primitives for testing different types",
     ]
     # HISTORY -----------------------------------------------
-    VERSION: tuple[int, int, int] = (0, 1, 12)
+    VERSION: tuple[int, int, int] = (0, 1, 13)
     TODO: list[str] = [
         "..."
     ]
@@ -67,7 +67,7 @@ class PROJECT(PROJECT_BASE):
         "..."
     ]
     NEWS: list[str] = [
-        "[PRIMITIVES] add ClsEqTrue/False",
+        "all moved into module FUNCS_AUX",
     ]
 
 

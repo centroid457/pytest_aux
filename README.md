@@ -9,13 +9,13 @@
 ![Commit/Count/y](https://img.shields.io/github/commit-activity/y/centroid457/pytest_aux)
 ![Commit/Count/m](https://img.shields.io/github/commit-activity/m/centroid457/pytest_aux)
 
-# pytest_aux (current v0.1.12/![Ver/Pypi Latest](https://img.shields.io/pypi/v/pytest_aux?label=pypi%20latest))
+# pytest_aux (current v0.1.13/![Ver/Pypi Latest](https://img.shields.io/pypi/v/pytest_aux?label=pypi%20latest))
 
 ## DESCRIPTION_SHORT
-templates/examples and aux for pytest
+all moved into module FUNCS_AUXt
 
 ## DESCRIPTION_LONG
-designed for ...
+
 
 
 ## Features
